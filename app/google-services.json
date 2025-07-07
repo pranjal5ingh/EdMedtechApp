@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "732792143420",
+    "project_id": "edmed-tech",
+    "storage_bucket": "edmed-tech.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732792143420:android:d70c288e8a1aced5d08d39",
+        "android_client_info": {
+          "package_name": "com.example.edmedtech"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUZ3_tu_69nTSU1CeiGHGCRVlvfiCoSeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

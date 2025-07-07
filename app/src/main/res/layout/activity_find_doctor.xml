@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingTop="@dimen/_10sdp"
+    tools:context=".FindDoctorActivity">
+
+    <!-- Top Row: Logo + Menu -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/rounded_image"
+        android:contentDescription="App Logo"
+        app:srcCompat="@drawable/logo"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/menuImage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:contentDescription="Menu"
+        android:layout_marginEnd="@dimen/_10sdp"
+        app:srcCompat="@drawable/menu_navgation_side"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/logoImage"
+        app:layout_constraintBottom_toBottomOf="@id/logoImage" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/txtFindDoctor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Find a Doctor"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_22sdp"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:fontFamily="@font/manrope"
+        app:layout_constraintTop_toBottomOf="@id/logoImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Specialization Filter -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/specializationLayout"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtFindDoctor"
+        android:hint=" Choose a Specialization"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/_10sdp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/autoSpecialization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/specialization_dropdown_bg"
+            android:gravity="center"
+            android:imeOptions="actionDone"
+            android:maxLines="1"
+            android:padding="12dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDoctors"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/specializationLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

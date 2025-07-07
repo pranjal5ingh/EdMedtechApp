@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingTop="@dimen/_7sdp"
+    android:paddingStart="@dimen/_16sdp"
+    android:paddingEnd="@dimen/_16sdp"
+    tools:context=".BrowserActivity">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/rounded_image"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/menuImage"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/logoImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/menu_navgation_side" />
+
+    <TextView
+        android:id="@+id/txtChooseService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:fontFamily="@font/manrope"
+        android:text="Choose a service"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_25sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImage" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/findDoctorCardView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_110sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtChooseService"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/find_doctor_border"
+            >
+
+            <!-- Image Background Circle using View -->
+            <View
+                android:id="@+id/imageBg"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="@dimen/_110sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@drawable/image_circle_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <!-- Image -->
+            <ImageView
+                android:id="@+id/doctorServiceImage"
+                android:layout_width="@dimen/_103sdp"
+                android:layout_height="@dimen/_105sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/doctor"
+                app:layout_constraintTop_toTopOf="@id/imageBg"
+                app:layout_constraintBottom_toBottomOf="@id/imageBg"
+                app:layout_constraintEnd_toEndOf="@id/imageBg" />
+
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/txtFindDoctor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Find a Doctor"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:fontFamily="@font/manrope"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/imageBg" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/txtDoctorSpecialized"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:fontFamily="@font/manrope"
+                android:text="Find specialized doctors for the right care"
+                android:textColor="#777777"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/txtFindDoctor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/imageBg" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/healthInsuranceCardView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_110sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/findDoctorCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/health_insurance_bg"
+            >
+            <ImageView
+                android:id="@+id/healthInsuranceServiceImage"
+                android:layout_width="@dimen/_103sdp"
+                android:layout_height="@dimen/_105sdp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/health_in"
+                android:layout_margin="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/txtHeathInsurance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Health \nInsurance"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/manrope"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/healthInsuranceServiceImage" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/txtHealthInsuraceBenfit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:fontFamily="@font/manrope"
+                android:text="Find the correct plan for you and your family"
+                android:textColor="#777777"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/txtHeathInsurance"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/healthInsuranceServiceImage" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/educationAndTainingCardView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_110sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/healthInsuranceCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/education_train_bg"
+            >
+            <ImageView
+                android:id="@+id/educationAndTrainingServiceImage"
+                android:layout_width="@dimen/_103sdp"
+                android:layout_height="@dimen/_105sdp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/education"
+                android:layout_margin="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/txtEducation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Education &amp;\nTraining"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/manrope"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/educationAndTrainingServiceImage" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/txtSubtitleEducation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:fontFamily="@font/manrope"
+                android:text="Learn and Grow with EdMedTech"
+                android:textColor="#777777"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/txtEducation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/educationAndTrainingServiceImage" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/blogCardView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_110sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/educationAndTainingCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/blog_public_bg"
+            >
+            <ImageView
+                android:id="@+id/blogServiceImage"
+                android:layout_width="@dimen/_103sdp"
+                android:layout_height="@dimen/_105sdp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/blog"
+                android:layout_margin="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/txtBlog"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Blog &amp; Public \nAwareness"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/manrope"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/blogServiceImage" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/txtSubtitleBlog"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:fontFamily="@font/manrope"
+                android:text="Grow more aware with our posts and aticles"
+                android:textColor="#777777"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/txtBlog"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/blogServiceImage" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:id="@+id/contactInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <TextView
+            android:id="@+id/txtContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Us"
+            android:textColor="#1E1E1E"
+            android:textSize="20sp"
+            android:fontFamily="@font/manrope"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+91 76830 67122"
+            android:textSize="18sp"
+            android:fontFamily="@font/manrope"
+            android:textColor="#444444" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/socialIcons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/_3sdp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/linkedinImage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/linkedin" />
+
+        <ImageView
+            android:id="@+id/emailImage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/email"
+            />
+
+        <ImageView
+            android:id="@+id/whatsappImage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/whatsapp"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

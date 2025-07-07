@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    android:background="@android:color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingStart="10dp"
+        android:paddingBottom="10dp"
+        android:background="#F1F1F1"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgDoctor"
+            android:layout_width="145dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/femaledo"
+            app:shapeAppearanceOverlay="@style/RoundedCornerImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+          />
+
+        <!-- Doctor Name -->
+        <TextView
+            android:id="@+id/txtDoctorName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Dr Rati Agrawal"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:fontFamily="@font/manrope"
+            app:layout_constraintTop_toTopOf="@id/imgDoctor"
+            app:layout_constraintStart_toEndOf="@id/imgDoctor"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Doctor Description -->
+        <TextView
+            android:id="@+id/txtDoctorDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:text="MBBS, DNB General Surgery, DNB Neurosurgery, Former Resident AIIMS Delhi..."
+            android:textColor="#777777"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/txtDoctorName"
+            app:layout_constraintStart_toStartOf="@id/txtDoctorName"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Specialization and Experience -->
+        <LinearLayout
+            android:id="@+id/specializationContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/txtDoctorDesc"
+            app:layout_constraintStart_toStartOf="@id/txtDoctorDesc"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/txtSpecialization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Neurosurgery "
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:fontFamily="@font/manrope" />
+
+            <TextView
+                android:id="@+id/txtExperience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Exp. 18 years"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:fontFamily="@font/manrope" />
+        </LinearLayout>
+
+        <!-- Fees -->
+        <TextView
+            android:id="@+id/txtFees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Fees: ₹1500"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/manrope"
+            app:layout_constraintTop_toBottomOf="@id/specializationContainer"
+            app:layout_constraintStart_toStartOf="@id/txtDoctorName" />
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:id="@+id/buttonContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="end"
+            app:layout_constraintTop_toBottomOf="@id/txtFees"
+            app:layout_constraintStart_toStartOf="@id/txtDoctorName"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <Button
+                android:id="@+id/btnBookAppointment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#C62828"
+                android:text="Book appointment →"
+                android:textColor="#FFFFFF"
+                android:textSize="7sp"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:textStyle="bold"
+                 />
+
+            <Button
+                android:id="@+id/btnViewProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#EEEEEE"
+                android:text="View Profile →"
+                android:textColor="#C62828"
+                android:textSize="7sp"
+                android:textStyle="bold"
+                 />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
